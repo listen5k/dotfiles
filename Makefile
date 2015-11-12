@@ -16,6 +16,7 @@ bash:
 	curl -L https://raw.github.com/maxtsepkov/bash_colors/master/bash_colors.sh > ~/.bash_colors
 	touch ~/.bashrc_local
 	ln -s $$(pwd)/.bashrc ~/.
+	ln -s $$(pwd)/.inputrc ~/.
 	ln -s $$(pwd)/.bash_profile ~/.
 
 brew:
@@ -42,7 +43,9 @@ apps-cli: brew
 		pyenv \
 		pyenv-virtualenvwrapper \
 		git \
-		tree
+		tree \
+		jq \
+		ruby
 	# To make bash 4 be the default we need do:
 	# sudo echo '/usr/local/bin/bash' | sudo tee -a /etc/shells
 	# chsh -s /usr/local/bin/bash
@@ -75,7 +78,9 @@ apps-gui: brew-cask
 		virtualbox \
 		iterm2 \
 		appcleaner \
-		vlc
+		vlc \
+		knockknock \
+		blockblock
 	brew cleanup
 
 apps: apps-cli apps-gui
